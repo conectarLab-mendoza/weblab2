@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>play audio</title>
+</head>
+
+<body >
+  <!-- Boton que llama a la funcion playAudio -->
+  <button onclick="playAudio('rie.ogg')">▶</button>
+  
+  <!-- Audio con el parametro controls para visualizarlo -->
+  <audio src="rie.ogg" controls></audio>
+
+  <!-- Recuerda que cualquier etiqueta html puede ejecutar una funcion -->
+  <img src="https://static.wikia.nocookie.net/brawlstars/images/0/0f/Griff_Skin-Default.png" 
+    alt="griff base"  
+    onclick="playAudio('rie.ogg')">
+</body>
+<script>
+
+  // funcion que reproduce un audio que se le pase por parametro
+  function playAudio(src) {
+    const audio = new Audio(src)
+    audio.play()
+  }
+
+  // esta funcion espera que cargue primero la pagina
+  window.onload = () => {
+    // ejecuta una funcion pasado el tiempo definido
+    setTimeout(() => {
+      playAudio('rie.ogg')
+      alert("audio")
+    }, 3000);
+  }
+</script>
+</html>
